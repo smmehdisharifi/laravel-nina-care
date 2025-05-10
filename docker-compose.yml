@@ -51,6 +51,13 @@ services:
           - laravel
       depends_on:
           - db
+  redis:
+      image: redis:alpine
+      container_name: nina_redis
+      ports:
+          - "6379:6379"
+      networks:
+          - laravel
 
 networks:
   laravel:
